@@ -5,3 +5,4 @@ bin
 details
 print_bot_id.py
 cputemp.py
+nohup.out

@@ -37,7 +37,7 @@ def handle_command(command, channel):
         myip = urllib2.urlopen('http://ip.42.pl/raw').read()
         response = "Current Public IP is :" + myip.decode('utf-8').rstrip() + " ."
     elif command.startswith(CPUUSAGE):
-        cpuuse = str(os.popen("top -n1 | awk '/Cpu\(s\):/ {print $2}'").readline().strip())
+        cpuuse = str(os.popen("top -b -n1 | awk '/Cpu\(s\):/ {print $2}'").readline().strip())
         response = "Current CPU Usage is : " + cpuuse + "."
     slack_client.api_call("chat.postMessage", channel=channel,
                           text=response, as_user=True)
