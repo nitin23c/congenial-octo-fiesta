@@ -3,3 +3,4 @@ include
 share
 bin
 details
+print_bot_id.py
